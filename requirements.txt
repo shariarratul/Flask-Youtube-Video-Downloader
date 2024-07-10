@@ -1,4 +1,5 @@
 Flask
+Gunicorn
 youtube_dl
 flask-cors
 os
