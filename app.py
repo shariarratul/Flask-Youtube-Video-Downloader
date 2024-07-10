@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_file
 import yt_dlp as youtube_dl
-import os
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
@@ -22,9 +22,9 @@ def download_video():
 
     return jsonify({'file_url': '/downloaded_video.mp4'})
 
-@app.route('/video/<filename>')
-def get_video(filename):
-    return send_file(filename)
+@app.route('/downloaded_video.mp4')
+def get_video():
+    return send_file('downloaded_video.mp4')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
